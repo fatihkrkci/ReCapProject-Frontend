@@ -2,22 +2,28 @@
   <app-navi></app-navi>
 
   <div class = "row">
-    <div>
-      <app-rental></app-rental>
+    <div class = "col-md-3">
+      <div>
+        <app-category></app-category>
+      </div>
+      <!-- <div>
+        <app-rental></app-rental>
+      </div>
+      <div>
+        <app-customer></app-customer>
+      </div>
+      <div>
+        <app-car></app-car>
+      </div>
+      <div>
+        <app-brand></app-brand>
+      </div>
+      <div>
+        <app-color></app-color>
+      </div> -->
     </div>
-    <div>
-      <app-customer></app-customer>
-    </div>
-    <div>
-      <app-car></app-car>
-    </div>
-    <div>
-      <app-brand></app-brand>
-    </div>
-    <div>
-      <app-color></app-color>
+    <div class = "col-md-9">
+      <router-outlet></router-outlet>
     </div>
   </div>
-
-  <router-outlet></router-outlet>
 </div>

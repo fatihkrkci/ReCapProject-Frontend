@@ -1,0 +1,10 @@
+<ul class="list-group">
+  <li [class]="getIndex()" routerLink = "">Ana Sayfa</li>
+  <li (click) = "setCurrentCategory(category)"
+  routerLink = "/categories/{{category.categoryName}}"
+  *ngFor = "let category of categories"
+  [class]="getCurrentCategoryClass(category)">
+  {{category.categoryName}}</li>
+</ul>
+
+<h5 *ngIf = "currentCategory">{{currentCategory.categoryName}} Seçtiniz!</h5>
