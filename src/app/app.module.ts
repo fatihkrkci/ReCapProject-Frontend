@@ -11,6 +11,7 @@ import { ColorComponent } from './components/color/color.component';
 import { BrandComponent } from './components/brand/brand.component';
 import { NaviComponent } from './components/navi/navi.component';
 import { CategoryComponent } from './components/category/category.component';
+import { CarDetailComponent } from './components/carDetail/carDetail.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { CategoryComponent } from './components/category/category.component';
     BrandComponent,
     NaviComponent,
     CategoryComponent,
+    CarDetailComponent
   ],
   imports: [
     BrowserModule,

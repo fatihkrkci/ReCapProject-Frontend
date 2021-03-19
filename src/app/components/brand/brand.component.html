@@ -9,10 +9,16 @@
       <th>Brand</th>
     </tr>
   </thead>
-  <tr *ngFor = "let brand of brands">
-    <td>{{brand.id}}</td>
-    <td>{{brand.brandName}}</td>
-  </tr>
+
+  <tbody>
+    <tr
+    routerLink="/Car/Brand/{{brand.id}}"
+    *ngFor="let brand of brands">
+      <th scope="row">{{brand.id}}</th>
+      <td>{{brand.brandName}}</td>
+    </tr>
+  </tbody>
+
 </table>
 
 
