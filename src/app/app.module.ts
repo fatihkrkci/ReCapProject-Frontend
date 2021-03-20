@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { FormsModule } from "@angular/forms";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,6 +13,10 @@ import { BrandComponent } from './components/brand/brand.component';
 import { NaviComponent } from './components/navi/navi.component';
 import { CategoryComponent } from './components/category/category.component';
 import { CarDetailComponent } from './components/carDetail/carDetail.component';
+import { CarFilterPipePipe } from './pipes/car-filter-pipe.pipe';
+import { BrandFilterPipePipe } from './pipes/brand-filter-pipe.pipe';
+import { ColorFilterPipePipe } from './pipes/color-filter-pipe.pipe';
+import { BrandOptionFilterPipe } from './pipes/brand-option-filter.pipe';
 
 @NgModule({
   declarations: [
@@ -23,12 +28,17 @@ import { CarDetailComponent } from './components/carDetail/carDetail.component';
     BrandComponent,
     NaviComponent,
     CategoryComponent,
-    CarDetailComponent
+    CarDetailComponent,
+    CarFilterPipePipe,
+    BrandFilterPipePipe,
+    ColorFilterPipePipe,
+    BrandOptionFilterPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -2,6 +2,15 @@
   <span class="visually-hidden">Loading...</span>
 </div>
 
+<div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">Renk Ara</label>
+  <input type="text" [(ngModel)]="filterText" class="form-control" id="filterText" placeholder="Arama ifadesi giriniz...">
+</div>
+
+<div *ngIf = "filterText.length>2" class = "alert alert-dark">
+  {{filterText}} aradınız
+</div>
+
 <table *ngIf = "dataLoaded==true" class = "table">
   <thead>
     <tr>
@@ -13,7 +22,7 @@
   <tbody>
     <tr
     routerLink="/Car/Color/{{color.id}}"
-     *ngFor="let color of colors">
+     *ngFor="let color of colors | colorFilterPipe:filterText">
       <th scope="row">{{color.id}}</th>
       <td>{{color.colorName}}</td>
     </tr>

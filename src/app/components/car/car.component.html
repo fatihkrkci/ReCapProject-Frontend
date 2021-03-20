@@ -23,6 +23,35 @@
   </tr>
 </table> -->
 
+<div class = "row my-2">
+  <div class = "col-md-5">
+    <select [(ngModel)]="brandFilter" class="form-select" aria-label="Default select example">
+      <option [selected]="getDefaultSelectBrand()" value=0>Marka Seçiniz</option>
+      <option *ngFor = "let brand of brands" value = "{{brand.id}}" >{{brand.brandName}}</option>
+    </select>
+  </div>
+
+  <div class = "col-md-5">
+    <select [(ngModel)]="colorFilter" class="form-select" aria-label="Default select example">
+      <option [selected]="getDefaultSelectColor()" value=0>Renk Seçiniz</option>
+      <option *ngFor = "let color of colors" value = "{{color.id}}" >{{color.colorName}}</option>
+    </select>
+  </div>
+
+  <div class = "col-md-2">
+    <button (click) = "setFilters()" type="button" class="btn btn-success">Filtrele</button>
+  </div>
+</div>
+
+<div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">Araç Ara</label>
+  <input type="text" [(ngModel)]="filterText" class="form-control" id="filterText" placeholder="Arama ifadesi giriniz...">
+</div>
+
+<div *ngIf = "filterText.length>2" class = "alert alert-dark">
+  {{filterText}} aradınız
+</div>
+
 <table *ngIf="dataLoaded!=false" class="table">
   <thead>
     <tr>
@@ -38,7 +67,7 @@
   <tbody>
     <tr
     routerLink="/categories/Car/Detail/{{car.carId}}"
-    *ngFor="let car of cars">
+    *ngFor="let car of cars | carFilterPipe:filterText">
       <th scope="row">{{car.carId}}</th>
       <td>{{car.modelYear}}</td>
       <td>{{car.carName}}</td>

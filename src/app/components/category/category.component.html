@@ -1,5 +1,5 @@
 <ul class="list-group">
-  <li [class]="getIndex()" routerLink = "">Ana Sayfa</li>
+  <li [class]="getIndex()" routerLink = "">Home</li>
   <li (click) = "setCurrentCategory(category)"
   routerLink = "/categories/{{category.categoryName}}"
   *ngFor = "let category of categories"

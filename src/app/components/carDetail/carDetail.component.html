@@ -1,7 +1,17 @@
-<div *ngFor="let car of cars">
+<!-- <div *ngFor="let car of cars">
   <p>{{car.brandName}}</p>
 </div>
 
 <div *ngFor="let image of image">
   <p>{{image.imagePath}}</p>
+</div> -->
+
+
+<div *ngFor="let car of cars" class="card mb-3">
+  <img *ngFor="let image of image" src="{{imageBasePath}}{{image.imagePath}}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{car.brandName}}</h5>
+    <p class="card-text">{{car.dailyPrice}}</p>
+    <p class="card-text"><small class="text-muted">{{car.description}}</small></p>
+  </div>
 </div>
